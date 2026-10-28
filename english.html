@@ -1,0 +1,725 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2685.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px 'Helvetica Neue'; min-height: 15.0px}
+    span.s1 {font: 13.0px 'STIX Two Math'}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"&gt;</p>
+<p class="p1">&lt;title&gt;🐱 小明的英语小课堂&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">* { margin: 0; padding: 0; box-sizing: border-box; }</p>
+<p class="p1">body {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: 'Arial', 'Microsoft YaHei', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #333;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.container {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width: 420px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0 auto;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* 顶部 */</p>
+<p class="p1">.header {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 15px 0;</p>
+<p class="p1">}</p>
+<p class="p1">.header h1 { font-size: 24px; margin-bottom: 5px; }</p>
+<p class="p1">.header .subtitle { font-size: 14px; opacity: 0.9; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* 进度条 */</p>
+<p class="p1">.progress-bar {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: rgba(255,255,255,0.3);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow: hidden;</p>
+<p class="p1">}</p>
+<p class="p1">.progress-fill {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: linear-gradient(90deg, #ffd700, #ffed4e);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: width 0.5s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 0%;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* 统计 */</p>
+<p class="p1">.stats {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: space-around;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 10px;</p>
+<p class="p1">}</p>
+<p class="p1">.stats span { background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 12px; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* 卡片 */</p>
+<p class="p1">.card {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 8px 32px rgba(0,0,0,0.15);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height: 280px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>justify-content: center;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.word-english {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #667eea;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: background 0.3s;</p>
+<p class="p1">}</p>
+<p class="p1">.word-english:active { background: #f0f0ff; }</p>
+<p class="p2"><br></p>
+<p class="p1">.word-chinese {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #555;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 8px 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.word-sentence {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #888;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-style: italic;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #f9f9ff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 10px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* 按钮 */</p>
+<p class="p1">.btn {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 14px 28px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: transform 0.2s, box-shadow 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>touch-action: manipulation;</p>
+<p class="p1">}</p>
+<p class="p1">.btn:active { transform: scale(0.95); }</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-speak {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: linear-gradient(135deg, #667eea, #764ba2);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 8px 0;</p>
+<p class="p1">}</p>
+<p class="p1">.btn-speak:active { box-shadow: 0 4px 15px rgba(102,126,234,0.5); }</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-correct {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: linear-gradient(135deg, #56ab2f, #a8e6cf);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex: 1;</p>
+<p class="p1">}</p>
+<p class="p1">.btn-wrong {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: linear-gradient(135deg, #ff6b6b, #ffa502);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex: 1;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">.btn-area {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 10px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* 结果页 */</p>
+<p class="p1">.result-page {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 20px;</p>
+<p class="p1">}</p>
+<p class="p1">.result-page h2 { font-size: 28px; margin: 15px 0; }</p>
+<p class="p1">.result-page .score { font-size: 48px; color: #ffd700; font-weight: bold; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* 星星动画 */</p>
+<p class="p1">.star {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>animation: bounce 0.6s;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 30px;</p>
+<p class="p1">}</p>
+<p class="p1">@keyframes bounce {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>0%, 100% { transform: scale(1); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>50% { transform: scale(1.4); }</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* 隐藏 */</p>
+<p class="p1">.hidden { display: none !important; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* 模式选择 */</p>
+<p class="p1">.mode-select {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 15px;</p>
+<p class="p1">}</p>
+<p class="p1">.mode-btn {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 3px solid #667eea;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #667eea;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: bold;</p>
+<p class="p1">}</p>
+<p class="p1">.mode-btn:active { background: #667eea; color: white; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* 录音区域 */</p>
+<p class="p1">.record-area {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 10px 0;</p>
+<p class="p1">}</p>
+<p class="p1">.record-btn {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: linear-gradient(135deg, #ff6b6b, #ffa502);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: white;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 70px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>height: 70px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: block;</p>
+<p class="p1">}</p>
+<p class="p1">.record-btn.recording {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>animation: pulse 1s infinite;</p>
+<p class="p1">}</p>
+<p class="p1">@keyframes pulse {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>0%, 100% { transform: scale(1); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>50% { transform: scale(1.1); }</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* 复习标记 */</p>
+<p class="p1">.mastery-badge {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 3px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-top: 5px;</p>
+<p class="p1">}</p>
+<p class="p1">.mastered { background: #d4edda; color: #155724; }</p>
+<p class="p1">.learning { background: #fff3cd; color: #856404; }</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 首页 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="homePage"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;🐱 小明的英语小课堂&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="subtitle"&gt;每天5个词，15分钟搞定！&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="stats"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;⭐ &lt;span id="totalStars"&gt;0&lt;/span&gt; 星星&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;📅 第 &lt;span id="dayNum"&gt;1&lt;/span&gt; 天&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;✅ &lt;span id="masteredCount"&gt;0&lt;/span&gt; 已掌握&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="progress-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="progress-fill" id="progressFill"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 style="color:#667eea; margin-bottom:10px;"&gt;选择模式 👇&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="mode-select"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="mode-btn" onclick="startMode('learn')"&gt;📖 学新单词&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="mode-btn" onclick="startMode('review')"&gt;🔄 复习错题&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="mode-btn" onclick="startMode('listen')"&gt;👂 听音识词&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="mode-btn" onclick="showWordList()"&gt;📋 查看所有单词&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 学习页 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="learnPage" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1 id="modeTitle"&gt;📖 学新单词&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="subtitle"&gt;&lt;span id="currentIndex"&gt;1&lt;/span&gt; / &lt;span id="totalIndex"&gt;5&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="progress-bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="progress-fill" id="learnProgress" style="width:20%"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" id="wordCard"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="word-english" id="wordEnglish" onclick="speakCurrent()"&gt;apple&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="word-chinese" id="wordChinese"&gt;🍎 苹果&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="word-sentence" id="wordSentence"&gt;I eat an apple. 我吃一个苹果。&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="masteryBadge"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-speak" onclick="speakCurrent()"&gt;🔊 点击听发音&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="record-area"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="record-btn" id="recordBtn" onclick="toggleRecord()"&gt;🎤&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="font-size:12px; color:#999; margin-top:5px;"&gt;点击跟读&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="btn-area"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-wrong" onclick="markWrong()"&gt;❌ 还不会&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn btn-correct" onclick="markCorrect()"&gt;✅ 我会了&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 听音识词页 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="listenPage" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;👂 听音识词&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="subtitle"&gt;听发音，选正确的中文意思&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" id="listenCard"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-speak" onclick="playListenAudio()" style="font-size:24px; padding:20px;"&gt;🔊 再听一次&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="listenOptions" style="display:flex; flex-direction:column; gap:10px; margin-top:15px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 结果页 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="resultPage" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card result-page"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2 id="resultTitle"&gt;🎉 太棒了！&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="score" id="resultScore"&gt;⭐⭐⭐&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="resultText" style="margin:15px 0; font-size:16px;"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-correct" onclick="goHome()" style="width:100%;"&gt;🏠 返回首页&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- 单词列表页 --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div id="listPage" class="hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;📋 我的单词本&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="mode-btn" onclick="goHome()" style="margin-top:10px;"&gt;🏠 返回&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="wordListContent"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// ============ 单词数据库 ============</p>
+<p class="p1">const wordData = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 第1天 - 数字</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "one", zh: "一", sentence: "I have one apple. 我有一个苹果。", day: 1, category: "数字" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "two", zh: "二", sentence: "I have two cats. 我有两只猫。", day: 1, category: "数字" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "three", zh: "三", sentence: "Three dogs run. 三只狗在跑。", day: 1, category: "数字" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "four", zh: "四", sentence: "Four birds fly. 四只鸟在飞。", day: 1, category: "数字" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "five", zh: "五", sentence: "Five books on the desk. 桌上有五本书。", day: 1, category: "数字" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 第2天 - 颜色</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "red", zh: "红色", sentence: "The apple is red. 苹果是红色的。", day: 2, category: "颜色" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "blue", zh: "蓝色", sentence: "The sky is blue. 天空是蓝色的。", day: 2, category: "颜色" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "yellow", zh: "黄色", sentence: "A yellow banana. 一根黄色的香蕉。", day: 2, category: "颜色" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "green", zh: "绿色", sentence: "Green grass. 绿色的草。", day: 2, category: "颜色" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "black", zh: "黑色", sentence: "My bag is black. 我的书包是黑色的。", day: 2, category: "颜色" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 第3天 - 动物</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "cat", zh: "猫", sentence: "The cat is cute. 这只猫很可爱。", day: 3, category: "动物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "dog", zh: "狗", sentence: "I like dogs. 我喜欢狗。", day: 3, category: "动物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "pig", zh: "猪", sentence: "The pig is pink. 猪是粉色的。", day: 3, category: "动物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "duck", zh: "鸭子", sentence: "A duck in the water. 水里有一只鸭子。", day: 3, category: "动物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "bird", zh: "鸟", sentence: "The bird can sing. 鸟会唱歌。", day: 3, category: "动物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 第4天 - 食物</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "apple", zh: "苹果", sentence: "I like apples. 我喜欢苹果。", day: 4, category: "食物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "milk", zh: "牛奶", sentence: "I drink milk. 我喝牛奶。", day: 4, category: "食物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "egg", zh: "鸡蛋", sentence: "An egg for breakfast. 早餐吃一个鸡蛋。", day: 4, category: "食物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "rice", zh: "米饭", sentence: "I eat rice. 我吃米饭。", day: 4, category: "食物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "water", zh: "水", sentence: "I want water. 我想要水。", day: 4, category: "食物" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 第5天 - 家庭</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "mom", zh: "妈妈", sentence: "I love my mom. 我爱我的妈妈。", day: 5, category: "家庭" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "dad", zh: "爸爸", sentence: "My dad is tall. 我爸爸很高。", day: 5, category: "家庭" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "grandma", zh: "奶奶/外婆", sentence: "Grandma is kind. 奶奶很慈祥。", day: 5, category: "家庭" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "grandpa", zh: "爷爷/外公", sentence: "Grandpa reads books. 爷爷看书。", day: 5, category: "家庭" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "baby", zh: "宝宝", sentence: "The baby cries. 宝宝在哭。", day: 5, category: "家庭" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 第6天 - 身体</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "eye", zh: "眼睛", sentence: "My eyes are big. 我的眼睛很大。", day: 6, category: "身体" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "hand", zh: "手", sentence: "Wash your hands. 洗你的手。", day: 6, category: "身体" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "mouth", zh: "嘴巴", sentence: "Open your mouth. 张开你的嘴。", day: 6, category: "身体" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "nose", zh: "鼻子", sentence: "My nose is small. 我的鼻子很小。", day: 6, category: "身体" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "ear", zh: "耳朵", sentence: "I hear with my ears. 我用耳朵听。", day: 6, category: "身体" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 第7天 - 动作</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "run", zh: "跑", sentence: "I can run fast. 我能跑得快。", day: 7, category: "动作" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "jump", zh: "跳", sentence: "Jump up high! 跳得高高的！", day: 7, category: "动作" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "eat", zh: "吃", sentence: "I eat rice. 我吃米饭。", day: 7, category: "动作" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "sleep", zh: "睡觉", sentence: "I sleep at night. 我晚上睡觉。", day: 7, category: "动作" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ en: "play", zh: "玩", sentence: "Let's play! 我们一起玩吧！", day: 7, category: "动作" },</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">// ============ 状态管理 ============</p>
+<p class="p1">let state = {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>currentMode: '',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>currentList: [], <span class="Apple-converted-space">    </span>// 当前学习的单词列表</p>
+<p class="p1"><span class="Apple-converted-space">  </span>currentIdx: 0,</p>
+<p class="p1"><span class="Apple-converted-space">  </span>todayWords: [],<span class="Apple-converted-space">      </span>// 今天要学的5个词</p>
+<p class="p1"><span class="Apple-converted-space">  </span>wrongWords: [],<span class="Apple-converted-space">      </span>// 错题本</p>
+<p class="p1"><span class="Apple-converted-space">  </span>masteredWords: [], <span class="Apple-converted-space">  </span>// 已掌握</p>
+<p class="p1"><span class="Apple-converted-space">  </span>stars: 0,</p>
+<p class="p1"><span class="Apple-converted-space">  </span>day: 1,</p>
+<p class="p1"><span class="Apple-converted-space">  </span>listenAnswer: '',</p>
+<p class="p1"><span class="Apple-converted-space">  </span>recording: false</p>
+<p class="p1">};</p>
+<p class="p2"><br></p>
+<p class="p1">// 从localStorage加载</p>
+<p class="p1">function loadState() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const saved = localStorage.getItem('englishApp_state');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (saved) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>state = { ...state, ...JSON.parse(saved) };</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateHomeUI();</p>
+<p class="p1">}</p>
+<p class="p1">function saveState() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>localStorage.setItem('englishApp_state', JSON.stringify(state));</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ============ 语音合成 ============</p>
+<p class="p1">function speak(text) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if ('speechSynthesis' in window) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 停止当前正在播放的语音</p>
+<p class="p1"><span class="Apple-converted-space">    </span>speechSynthesis.cancel();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const utter = new SpeechSynthesisUtterance(text);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>utter.lang = 'en-US';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>utter.rate = 0.7;<span class="Apple-converted-space">  </span>// 慢一点，适合孩子</p>
+<p class="p1"><span class="Apple-converted-space">    </span>utter.pitch = 1.2; // 高一点，更可爱</p>
+<p class="p1"><span class="Apple-converted-space">    </span>speechSynthesis.speak(utter);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>alert('你的浏览器不支持语音功能，试试Chrome或Safari吧！');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p1">function speakCurrent() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const word = state.currentList[state.currentIdx];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (word) speak(word.en);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ============ 首页 ============</p>
+<p class="p1">function updateHomeUI() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('totalStars').textContent = state.stars;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('dayNum').textContent = state.day;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('masteredCount').textContent = state.masteredWords.length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const totalWords = wordData.length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const pct = totalWords &gt; 0 ? (state.masteredWords.length / totalWords * 100) : 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('progressFill').style.width = pct + '%';</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function goHome() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('homePage').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('learnPage').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('listenPage').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('resultPage').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('listPage').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateHomeUI();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ============ 学习模式 ============</p>
+<p class="p1">function startMode(mode) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>state.currentMode = mode;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('homePage').classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (mode === 'learn') {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 获取今天的5个词（按day字段）</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const todayData = wordData.filter(w =&gt; w.day === state.day);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (todayData.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// 如果今天的学完了，从错题里取</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (state.wrongWords.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>state.currentList = [...state.wrongWords];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// 全部学完了</p>
+<p class="p1"><span class="Apple-converted-space">        </span>showResult('🎊 本周全部学完啦！', '你已经掌握了所有单词！', '⭐⭐⭐⭐⭐');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>state.currentList = todayData;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>state.currentIdx = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('learnPage').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('modeTitle').textContent = '📖 学新单词';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showCurrentWord();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else if (mode === 'review') {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (state.wrongWords.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>alert('🎉 没有错题！你太厉害了！');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>goHome();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>state.currentList = [...state.wrongWords];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>state.currentIdx = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('learnPage').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('modeTitle').textContent = '🔄 复习错题';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showCurrentWord();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else if (mode === 'listen') {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (state.masteredWords.length + state.wrongWords.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>alert('先学几个单词再来玩听音游戏吧！');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>goHome();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('listenPage').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>startListenRound();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function showCurrentWord() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const word = state.currentList[state.currentIdx];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!word) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 学完了</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showSessionResult();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('wordEnglish').textContent = word.en;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('wordChinese').textContent = `📝 ${word.zh}`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('wordSentence').textContent = word.sentence;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('currentIndex').textContent = state.currentIdx + 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('totalIndex').textContent = state.currentList.length;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const pct = ((state.currentIdx + 1) / state.currentList.length) * 100;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('learnProgress').style.width = pct + '%';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 掌握状态标记</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const badge = document.getElementById('masteryBadge');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (state.masteredWords.includes(word.en)) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>badge.innerHTML = '&lt;span class="mastery-badge mastered"&gt;✅ 已掌握&lt;/span&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else if (state.wrongWords.includes(word.en)) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>badge.innerHTML = '&lt;span class="mastery-badge learning"&gt;🔄 复习中&lt;/span&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>badge.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 自动朗读</p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(() =&gt; speak(word.en), 300);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function markCorrect() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const word = state.currentList[state.currentIdx];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 从错题中移除，加入已掌握</p>
+<p class="p1"><span class="Apple-converted-space">  </span>state.wrongWords = state.wrongWords.filter(w =&gt; w !== word.en);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!state.masteredWords.includes(word.en)) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>state.masteredWords.push(word.en);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>state.stars += 2;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>nextWord();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function markWrong() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const word = state.currentList[state.currentIdx];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!state.wrongWords.includes(word.en)) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>state.wrongWords.push(word.en);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 播放正确发音让孩子再听一次</p>
+<p class="p1"><span class="Apple-converted-space">  </span>speak(word.en);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(() =&gt; nextWord(), 800);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function nextWord() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>state.currentIdx++;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (state.currentIdx &gt;= state.currentList.length) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showSessionResult();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>showCurrentWord();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function showSessionResult() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const correct = state.currentList.filter(w =&gt; state.masteredWords.includes(w.en)).length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const total = state.currentList.length;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const stars = '⭐'.repeat(Math.min(5, Math.ceil(correct / total * 5)));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>showResult(</p>
+<p class="p1"><span class="Apple-converted-space">    </span>correct === total ? '🎉 全对！太棒了！' : `💪 不错哦！${correct}/${total} 个对了`,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>`今天学了 ${total} 个词，还有 ${state.wrongWords.length} 个需要复习`,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>stars</p>
+<p class="p1"><span class="Apple-converted-space">  </span>);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function showResult(title, text, stars) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('learnPage').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('listenPage').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('resultPage').classList.remove('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('resultTitle').textContent = title;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('resultText').textContent = text;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('resultScore').textContent = stars;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ============ 听音识词 ============</p>
+<p class="p1">function startListenRound() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 从已学和正在学的词里随机选一个</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const pool = wordData.filter(w =&gt; state.masteredWords.includes(w.en) || state.wrongWords.includes(w.en) || w.day &lt;= state.day);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (pool.length &lt; 2) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>document.getElementById('listenCard').innerHTML = '&lt;h3&gt;先多学几个单词再来玩吧！&lt;/h3&gt;&lt;button class="btn btn-correct" onclick="goHome()"&gt;返回&lt;/button&gt;';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const answer = pool[Math.floor(Math.random() * pool.length)];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>state.listenAnswer = answer.en;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 生成选项（1个正确 + 3个错误）</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const options = [answer];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>while (options.length &lt; 4) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const candidate = pool[Math.floor(Math.random() * pool.length)];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!options.find(o =&gt; o.en === candidate.en)) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>options.push(candidate);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 打乱</p>
+<p class="p1"><span class="Apple-converted-space">  </span>options.sort(() =&gt; Math.random() - 0.5);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('listenCard').innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn-speak" onclick="playListenAudio()" style="font-size:24px; padding:20px;"&gt;🔊 点击听发音&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div style="display:flex; flex-direction:column; gap:10px; margin-top:15px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>${options.map(o =&gt; `&lt;button class="mode-btn" onclick="checkListenAnswer('${o.en}', '${answer.en}')" style="font-size:16px;"&gt;${o.zh}&lt;/button&gt;`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>setTimeout(() =&gt; speak(answer.en), 300);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function playListenAudio() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (state.listenAnswer) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const word = wordData.find(w =&gt; w.en === state.listenAnswer);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (word) speak(word.en);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function checkListenAnswer(selected, correct) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (selected === correct) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>state.stars += 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 答对动画</p>
+<p class="p1"><span class="Apple-converted-space">    </span>event.target.style.background = '#56ab2f';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>event.target.style.color = 'white';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// 继续下一题</p>
+<p class="p1"><span class="Apple-converted-space">      </span>startListenRound();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, 800);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>event.target.style.background = '#ff6b6b';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>event.target.style.color = 'white';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 标记到错题本</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!state.wrongWords.includes(correct)) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>state.wrongWords.push(correct);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>saveState();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>setTimeout(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>// 显示正确答案</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const word = wordData.find(w =&gt; w.en === correct);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>alert(`正确答案是：${word.zh} (${word.en})`);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>startListenRound();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, 800);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ============ 录音功能 ============</p>
+<p class="p1">function toggleRecord() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btn = document.getElementById('recordBtn');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!state.recording) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// 开始录音</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const recognition = new SpeechRecognition();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>recognition.lang = 'en-US';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>recognition.continuous = false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>recognition.interimResults = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>btn.classList.add('recording');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>btn.textContent = '<span class="s1">⏹</span>';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>state.recording = true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>recognition.start();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>recognition.onresult = function(event) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const transcript = event.results[0][0].transcript.toLowerCase().trim();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const currentWord = state.currentList[state.currentIdx].en.toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.classList.remove('recording');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.textContent = '🎤';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>state.recording = false;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (transcript.includes(currentWord) || currentWord.includes(transcript)) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>alert('🎉 读得真好！');</p>
+<p class="p1"><span class="Apple-converted-space">          </span>markCorrect();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>alert(`你读的是："${transcript}"\n再来一次试试！`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>recognition.onerror = function() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.classList.remove('recording');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.textContent = '🎤';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>state.recording = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>alert('没听清，再试一次吧！');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>recognition.onend = function() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.classList.remove('recording');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>btn.textContent = '🎤';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>state.recording = false;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>alert('你的浏览器不支持语音识别，但你可以跟着读，然后点"我会了"！');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ============ 单词列表 ============</p>
+<p class="p1">function showWordList() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('homePage').classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('listPage').classList.remove('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const content = document.getElementById('wordListContent');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 按天分组</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let html = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for (let d = 1; d &lt;= 7; d++) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const dayWords = wordData.filter(w =&gt; w.day === d);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html += `&lt;div class="card" style="margin:10px 0;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h3 style="color:#667eea; margin-bottom:8px;"&gt;第${d}天 - ${dayWords[0]?.category || ''}&lt;/h3&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>dayWords.forEach(w =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const status = state.masteredWords.includes(w.en) ? '✅' : state.wrongWords.includes(w.en) ? '🔄' : '⬜';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>html += `&lt;div style="display:flex; justify-content:space-between; padding:6px; border-bottom:1px solid #eee; font-size:14px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;${status} &lt;b&gt;${w.en}&lt;/b&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span style="color:#888;"&gt;${w.zh}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>html += `&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>content.innerHTML = html;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ============ 初始化 ============</p>
+<p class="p1">loadState();</p>
+<p class="p2"><br></p>
+<p class="p1">// 每天自动重置day（简单逻辑：根据localStorage里的日期）</p>
+<p class="p1">const today = new Date().toDateString();</p>
+<p class="p1">const savedDate = localStorage.getItem('englishApp_date');</p>
+<p class="p1">if (savedDate !== today) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// 新的一天</p>
+<p class="p1"><span class="Apple-converted-space">  </span>localStorage.setItem('englishApp_date', today);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// day循环1-7</p>
+<p class="p1"><span class="Apple-converted-space">  </span>state.day = (state.day % 7) + 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>saveState();</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+<p class="p2"><br></p>
+</body>
+</html>
